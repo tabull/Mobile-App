@@ -2,4 +2,22 @@
     <string name="app_name">AlarmClockApp</string>
     <string name="button_send">Set Alarm</string>
     <string name="alarm_message">Alarm set for: </string>
+    <string name="enter_the_correct_country_name">Enter the correct country name</string>
+    <string name="england_flag">england_flag</string>
+    <string name="go">go</string>
+    <string name="k">K</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="o">O</string>
+    <string name="n">N</string>
+    <string name="l">L</string>
+    <string name="p">P</string>
+    <string name="h">H</string>
+    <string name="m">M</string>
+    <string name="g">G</string>
+    <string name="c">C</string>
+    <string name="r">R</string>
+    <string name="a">A</string>
+    <string name="j">J</string>
+    <string name="clear">CLEAR</string>
 </resources>
