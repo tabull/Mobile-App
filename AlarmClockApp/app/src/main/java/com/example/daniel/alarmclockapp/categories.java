@@ -1,5 +1,8 @@
 package com.example.daniel.alarmclockapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,8 +37,12 @@ public class categories extends AppCompatActivity{
                 && textout6.getText().equals("N")
                 && textout7.getText().equals("D")
                 ) {
-            Toast.makeText(getApplicationContext(), "Correct",Toast.LENGTH_SHORT).show();
-        }else{
+            Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, alarmList.class);
+            startActivity(intent);
+
+        } else{
             Toast.makeText(getApplicationContext(), "Incorrect",Toast.LENGTH_SHORT).show();
         }
     }

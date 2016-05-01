@@ -27,9 +27,9 @@ public class alarmList extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void changeAlarm(View view) {
-        super.onBackPressed();
+        Intent intent2 = new Intent(this, settingAlarm.class);
+        startActivity(intent2);
     }
-
 
 
 }
