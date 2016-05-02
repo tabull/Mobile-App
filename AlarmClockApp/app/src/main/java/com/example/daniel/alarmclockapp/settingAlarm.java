@@ -9,9 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class settingAlarm extends AppCompatActivity {
@@ -32,6 +37,28 @@ public class settingAlarm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_set);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        // Spinner element
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("Smoke Alarm");
+        categories.add("Industrial Alarm");
+        categories.add("Police Siren");
+        categories.add("Toy Siren");
+        categories.add("Monotone Beeps");
+
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
     }
 
     //Response to button
