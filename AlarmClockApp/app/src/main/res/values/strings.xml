@@ -22,4 +22,5 @@
     <string name="clear">CLEAR</string>
     <string name="alarm_tone">Alarm Tone: </string>
     <string name="task_select">Choose Task: </string>
+    <string name="edit_alarm">Edit Alarm...</string>
 </resources>

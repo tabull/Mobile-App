@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.rtp.AudioStream;
 import android.support.v4.app.NotificationCompat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 
 public class AlarmService extends IntentService{
     private NotificationManager alarmNotificationManager;
@@ -34,11 +37,22 @@ public class AlarmService extends IntentService{
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, categories.class), 0);
 
-        mPlayer = MediaPlayer.create(this, R.raw.alarmbuzzer);
+
+        List<Integer> soundList = new ArrayList<Integer>();
+        soundList.add(R.raw.alarm_buzzer);
+        soundList.add(R.raw.industrial_alarm);
+        soundList.add(R.raw.police_siren);
+        soundList.add(R.raw.tornado_siren);
+
+        int randomInt = new Random().nextInt(soundList.size());
+        int sound = soundList.get(randomInt);
+
+
+        mPlayer = MediaPlayer.create(this, sound);
         mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
         originalVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 8, 0);
 
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mPlayer.setLooping(true);

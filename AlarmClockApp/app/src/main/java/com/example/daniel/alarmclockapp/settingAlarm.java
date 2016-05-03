@@ -39,26 +39,37 @@ public class settingAlarm extends AppCompatActivity {
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
 
 
         // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Smoke Alarm");
-        categories.add("Industrial Alarm");
-        categories.add("Police Siren");
-        categories.add("Toy Siren");
-        categories.add("Monotone Beeps");
+        List<String> alarms = new ArrayList<String>();
+        alarms.add("Random");
+        alarms.add("Buzzer Alarm");
+        alarms.add("Industrial Alarm");
+        alarms.add("Police Siren");
+        alarms.add("Tornado Siren");
 
 
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, alarms);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+        // Spinner element
+        Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
+
+
+        // Spinner Drop down elements
+        List<String> tasks = new ArrayList<String>();
+        tasks.add("Random");
+        tasks.add("Name the Flag");
+        tasks.add("Maths Challenge");
+        tasks.add("Shake");
+
+
+        ArrayAdapter <String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks);
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(dataAdapter2);
     }
 
     //Response to button
