@@ -40,7 +40,7 @@ public class categories extends AppCompatActivity{
             Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
 
             AlarmService.mPlayer.stop();
-            Intent intent = new Intent(this, alarmList.class);
+            Intent intent = new Intent(this, settingAlarm.class);
             startActivity(intent);
 
         } else{
@@ -151,10 +151,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -179,10 +176,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -207,10 +201,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -235,10 +226,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -263,10 +251,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -291,10 +276,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -319,10 +301,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -347,10 +326,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -375,10 +351,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -403,10 +376,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -431,10 +401,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -459,10 +426,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -487,10 +451,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -515,10 +476,7 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {

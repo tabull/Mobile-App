@@ -138,6 +138,9 @@ public class settingAlarm extends AppCompatActivity {
         String alarmTone = "Chosen Alarm: " + selectedAlarm;
         intent.putExtra(selectedAlarm, alarmTone);
 
+        String task = "Chosen Task: " + selectedTask;
+        intent.putExtra(selectedTask, task);
+
         startActivity(intent);
     }
 
