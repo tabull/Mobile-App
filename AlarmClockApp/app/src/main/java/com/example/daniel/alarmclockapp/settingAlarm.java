@@ -9,9 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class settingAlarm extends AppCompatActivity {
@@ -32,6 +37,39 @@ public class settingAlarm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_set);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        // Spinner element
+        Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
+
+
+        // Spinner Drop down elements
+        List<String> alarms = new ArrayList<String>();
+        alarms.add("Random");
+        alarms.add("Buzzer Alarm");
+        alarms.add("Industrial Alarm");
+        alarms.add("Police Siren");
+        alarms.add("Tornado Siren");
+
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, alarms);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        // Spinner element
+        Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
+
+
+        // Spinner Drop down elements
+        List<String> tasks = new ArrayList<String>();
+        tasks.add("Random");
+        tasks.add("Name the Flag");
+        tasks.add("Maths Challenge");
+        tasks.add("Shake");
+
+
+        ArrayAdapter <String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks);
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(dataAdapter2);
     }
 
     //Response to button
