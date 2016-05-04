@@ -47,6 +47,46 @@ public class categories extends AppCompatActivity{
         }
     }
 
+    public void backspace(View view) {
+        letter = "";
+        textout = (TextView) findViewById(R.id.L1);
+        TextView textout2 = (TextView) findViewById(R.id.L2);
+        TextView textout3 = (TextView) findViewById(R.id.L3);
+        TextView textout4 = (TextView) findViewById(R.id.L4);
+        TextView textout5 = (TextView) findViewById(R.id.L5);
+        TextView textout6 = (TextView) findViewById(R.id.L6);
+        TextView textout7 = (TextView) findViewById(R.id.L7);
+
+        if((textout != null || !textout.getText().equals("")) && (textout2 == null || textout2.getText().equals(""))){
+            textout.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 == null || textout3.getText().equals(""))){
+            textout2.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 != null || !textout3.getText().equals(""))
+                && (textout4 == null || textout4.getText().equals("")) ){
+            textout3.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 != null || !textout3.getText().equals(""))
+                && (textout4 != null || !textout4.getText().equals("")) && (textout5 == null || textout5.getText().equals("")) ){
+            textout4.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 != null || !textout3.getText().equals(""))
+                && (textout4 != null || !textout4.getText().equals("")) && (textout5 != null || !textout5.getText().equals("")) && (textout6 == null || textout6.getText().equals("")) ){
+            textout5.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 != null || !textout3.getText().equals(""))
+                && (textout4 != null || !textout4.getText().equals("")) && (textout5 != null || !textout5.getText().equals("")) && (textout6 != null || !textout6.getText().equals(""))
+                && (textout7 == null || textout7.getText().equals(""))){
+            textout6.setText(letter);
+        }
+        if((textout != null || !textout.getText().equals("")) && (textout2 != null || !textout2.getText().equals(""))  && (textout3 != null || !textout3.getText().equals(""))
+                && (textout4 != null || !textout4.getText().equals("")) && (textout5 != null || !textout5.getText().equals("")) && (textout6 != null || !textout6.getText().equals(""))
+                && (textout7 != null || !textout7.getText().equals(""))){
+            textout7.setText(letter);
+        }
+    }
+
     public void clear(View view) {
         letter = "";
         textout = (TextView) findViewById(R.id.L1);
@@ -86,7 +126,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "K",Toast.LENGTH_SHORT).show();
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -111,7 +150,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "D",Toast.LENGTH_SHORT).show();
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -136,7 +174,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "E",Toast.LENGTH_SHORT).show();
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -161,7 +198,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "Space",Toast.LENGTH_SHORT).show();
             if(textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if(textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -186,7 +222,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "O", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -211,7 +246,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "G", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -236,7 +270,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "C", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -261,7 +294,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "R", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -286,7 +318,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "N", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -311,7 +342,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "L", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -336,7 +366,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "H", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -361,7 +390,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "P", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -386,7 +414,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "M", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -411,7 +438,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "A", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {
@@ -436,7 +462,6 @@ public class categories extends AppCompatActivity{
             TextView textout5 = (TextView) findViewById(R.id.L5);
             TextView textout6 = (TextView) findViewById(R.id.L6);
             TextView textout7 = (TextView) findViewById(R.id.L7);
-            Toast.makeText(getApplicationContext(), "J", Toast.LENGTH_SHORT).show();
             if (textout == null || textout.getText().equals("")) {
                 textout.setText(letter);
             } else if (textout != null && (textout2 == null || textout2.getText().equals(""))) {

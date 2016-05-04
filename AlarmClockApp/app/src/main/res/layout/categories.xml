@@ -35,11 +35,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/L1"
-        android:layout_marginTop="30dp"
         android:background="@drawable/border"
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="19dp" />
 
     <TextView
         android:layout_width="35dp"
@@ -106,7 +106,7 @@
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:id="@+id/K"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="48dp"
         android:text="@string/k"
         android:onClick="click"
         android:layout_below="@+id/L1"
@@ -315,7 +315,8 @@
         android:layout_alignRight="@+id/R"
         android:layout_alignEnd="@+id/R"
         android:layout_alignTop="@+id/L7"
-        android:onClick="go"/>
+        android:onClick="go"
+        android:layout_alignBottom="@+id/L7" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -323,10 +324,26 @@
         android:layout_height="35dp"
         android:text="@string/clear"
         android:id="@+id/clear"
-        android:layout_below="@+id/go"
-        android:layout_alignLeft="@+id/go"
-        android:layout_alignStart="@+id/go"
-        android:onClick="clear" />
+        android:onClick="clear"
+        android:layout_above="@+id/O"
+        android:layout_alignLeft="@+id/L5"
+        android:layout_alignStart="@+id/L5"
+        android:layout_alignRight="@+id/G"
+        android:layout_alignEnd="@+id/G"
+        android:layout_below="@+id/L5" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:text="Backspace"
+        android:id="@+id/backspace"
+        android:onClick="backspace"
+        android:layout_above="@+id/D"
+        android:layout_toRightOf="@+id/K"
+        android:layout_alignRight="@+id/L4"
+        android:layout_alignEnd="@+id/L4"
+        android:layout_below="@+id/L2" />
 
 
 </RelativeLayout>
