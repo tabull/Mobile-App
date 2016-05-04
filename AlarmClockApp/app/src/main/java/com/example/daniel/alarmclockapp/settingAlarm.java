@@ -24,12 +24,12 @@ public class settingAlarm extends AppCompatActivity {
     AlarmManager alarmManager;
     private PendingIntent pendingIntent;
     public final static String EXTRA_MESSAGE = ".";
-    private static settingAlarm inst;
+    public static String selectedAlarm = "";
+    public static String selectedTask = "";
 
     @Override
     public void onStart() {
         super.onStart();
-        inst = this;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class settingAlarm extends AppCompatActivity {
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
+        final Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
 
 
         // Spinner Drop down elements
@@ -55,8 +55,20 @@ public class settingAlarm extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                selectedAlarm = spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+
+        });
+
         // Spinner element
-        Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
 
 
         // Spinner Drop down elements
@@ -70,6 +82,19 @@ public class settingAlarm extends AppCompatActivity {
         ArrayAdapter <String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(dataAdapter2);
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                selectedTask = spinner2.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+
+        });
+
     }
 
     //Response to button
@@ -110,11 +135,10 @@ public class settingAlarm extends AppCompatActivity {
         String time = "Alarm set for: " + formattedTime;
         intent.putExtra(EXTRA_MESSAGE, time);
 
+        String alarmTone = "Chosen Alarm: " + selectedAlarm;
+        intent.putExtra(selectedAlarm, alarmTone);
+
         startActivity(intent);
-    }
-
-    public void cancelAlarm() {
-
     }
 
 }
