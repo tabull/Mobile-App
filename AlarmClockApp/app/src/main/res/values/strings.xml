@@ -34,5 +34,6 @@
     <string name="btn_maths_go">Turn Off Alarm</string>
     <string name="btn_maths_clear">Clear</string>
     <string name="btn_maths_back1">Back1</string>
+    <string name="txt_maths_info">*BODMAS applies</string>
 </resources>
 
