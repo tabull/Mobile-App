@@ -18,18 +18,31 @@ public class alarmList extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(settingAlarm.EXTRA_MESSAGE);
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
+        String message2 = intent.getStringExtra(settingAlarm.selectedAlarm);
+        String message3 = intent.getStringExtra(settingAlarm.selectedTask);
+
+        TextView textView = (TextView) findViewById(R.id.alarmSetText);
+        TextView textView2 = (TextView) findViewById(R.id.chosenAlarmText);
+        TextView textView3 = (TextView) findViewById(R.id.chosenTaskText);
+
+        assert textView != null;
         textView.setText(message);
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        layout.addView(textView);
+        textView.setTextSize(32);
+
+        assert textView2 != null;
+        textView2.setText(message2);
+        textView2.setTextSize(32);
+
+        assert textView3 != null;
+        textView3.setText(message3);
+        textView3.setTextSize(32);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void changeAlarm(View view) {
-        super.onBackPressed();
+        Intent intent2 = new Intent(this, settingAlarm.class);
+        startActivity(intent2);
     }
-
 
 
 }
