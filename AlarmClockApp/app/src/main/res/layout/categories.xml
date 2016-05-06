@@ -336,7 +336,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="67dp"
         android:layout_height="35dp"
-        android:text="Backspace"
+        android:text="@string/backspace"
         android:id="@+id/backspace"
         android:onClick="backspace"
         android:layout_above="@+id/D"

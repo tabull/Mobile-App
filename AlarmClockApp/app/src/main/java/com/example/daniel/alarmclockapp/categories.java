@@ -40,7 +40,7 @@ public class categories extends AppCompatActivity{
             Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
 
             AlarmService.mPlayer.stop();
-            Intent intent = new Intent(this, alarmList.class);
+            Intent intent = new Intent(this, settingAlarm.class);
             startActivity(intent);
 
         } else{

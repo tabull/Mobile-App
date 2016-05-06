@@ -22,14 +22,16 @@ import java.util.List;
 public class settingAlarm extends AppCompatActivity {
 
     AlarmManager alarmManager;
-    private PendingIntent pendingIntent;
-    public final static String EXTRA_MESSAGE = ".";
-    private static settingAlarm inst;
+    public static String selectedAlarm = "";
+    public static String selectedTask = "";
+    public static String time = "";
+    public static String alarmTone = "";
+    public static String task = "";
+    public static String formattedTime = "";
 
     @Override
     public void onStart() {
         super.onStart();
-        inst = this;
     }
 
     @Override
@@ -39,12 +41,12 @@ public class settingAlarm extends AppCompatActivity {
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
+        final Spinner spinner = (Spinner) findViewById(R.id.alarmSpinner);
 
 
         // Spinner Drop down elements
         List<String> alarms = new ArrayList<String>();
-        alarms.add("Random");
+        alarms.add("Random Tone");
         alarms.add("Buzzer Alarm");
         alarms.add("Industrial Alarm");
         alarms.add("Police Siren");
@@ -55,21 +57,47 @@ public class settingAlarm extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                selectedAlarm = spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+
+        });
+
         // Spinner element
-        Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.taskSpinner);
 
 
         // Spinner Drop down elements
         List<String> tasks = new ArrayList<String>();
-        tasks.add("Random");
+        tasks.add("Random Task");
         tasks.add("Name the Flag");
         tasks.add("Maths Challenge");
-        tasks.add("Shake");
+        tasks.add("Shake Phone");
 
 
         ArrayAdapter <String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(dataAdapter2);
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                selectedTask = spinner2.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                selectedTask = "Random";
+            }
+
+        });
+
     }
 
     //Response to button
@@ -103,18 +131,22 @@ public class settingAlarm extends AppCompatActivity {
         calendar.set(Calendar.MINUTE, timePicker.getMinute());
 
         Intent myIntent = new Intent(settingAlarm.this, AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(settingAlarm.this, 0, myIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(settingAlarm.this, 0, myIntent, 0);
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+
         Intent intent = new Intent(this, alarmList.class);
 
-        String time = "Alarm set for: " + formattedTime;
-        intent.putExtra(EXTRA_MESSAGE, time);
+
+        time = formattedTime;
+        intent.putExtra(time, formattedTime);
+
+        alarmTone = selectedAlarm;
+        intent.putExtra(alarmTone, selectedAlarm);
+
+        task = selectedTask;
+        intent.putExtra(task, selectedTask);
 
         startActivity(intent);
-    }
-
-    public void cancelAlarm() {
-
     }
 
 }
