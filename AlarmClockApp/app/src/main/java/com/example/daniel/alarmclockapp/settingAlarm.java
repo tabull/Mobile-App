@@ -22,10 +22,12 @@ import java.util.List;
 public class settingAlarm extends AppCompatActivity {
 
     AlarmManager alarmManager;
-    private PendingIntent pendingIntent;
-    public final static String EXTRA_MESSAGE = ".";
     public static String selectedAlarm = "";
     public static String selectedTask = "";
+    public static String time = "";
+    public static String alarmTone = "";
+    public static String task = "";
+    public static String formattedTime = "";
 
     @Override
     public void onStart() {
@@ -44,7 +46,7 @@ public class settingAlarm extends AppCompatActivity {
 
         // Spinner Drop down elements
         List<String> alarms = new ArrayList<String>();
-        alarms.add("Random");
+        alarms.add("Random Tone");
         alarms.add("Buzzer Alarm");
         alarms.add("Industrial Alarm");
         alarms.add("Police Siren");
@@ -73,10 +75,10 @@ public class settingAlarm extends AppCompatActivity {
 
         // Spinner Drop down elements
         List<String> tasks = new ArrayList<String>();
-        tasks.add("Random");
+        tasks.add("Random Task");
         tasks.add("Name the Flag");
         tasks.add("Maths Challenge");
-        tasks.add("Shake");
+        tasks.add("Shake Phone");
 
 
         ArrayAdapter <String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks);
@@ -91,6 +93,7 @@ public class settingAlarm extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
+                selectedTask = "Random";
             }
 
         });
@@ -128,18 +131,20 @@ public class settingAlarm extends AppCompatActivity {
         calendar.set(Calendar.MINUTE, timePicker.getMinute());
 
         Intent myIntent = new Intent(settingAlarm.this, AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(settingAlarm.this, 0, myIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(settingAlarm.this, 0, myIntent, 0);
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+
         Intent intent = new Intent(this, alarmList.class);
 
-        String time = "Alarm set for: " + formattedTime;
-        intent.putExtra(EXTRA_MESSAGE, time);
 
-        String alarmTone = "Chosen Alarm: " + selectedAlarm;
-        intent.putExtra(selectedAlarm, alarmTone);
+        time = formattedTime;
+        intent.putExtra(time, formattedTime);
 
-        String task = "Chosen Task: " + selectedTask;
-        intent.putExtra(selectedTask, task);
+        alarmTone = selectedAlarm;
+        intent.putExtra(alarmTone, selectedAlarm);
+
+        task = selectedTask;
+        intent.putExtra(task, selectedTask);
 
         startActivity(intent);
     }

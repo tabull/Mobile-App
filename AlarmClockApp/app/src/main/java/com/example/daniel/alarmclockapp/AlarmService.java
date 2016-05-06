@@ -14,7 +14,6 @@ import java.util.Random;
 
 
 public class AlarmService extends IntentService{
-    private NotificationManager alarmNotificationManager;
     static MediaPlayer mPlayer;
     AudioManager mAudioManager;
     int originalVolume;
@@ -31,22 +30,59 @@ public class AlarmService extends IntentService{
 
 
     private void sendNotification(String msg) {
-        alarmNotificationManager = (NotificationManager) this
+        NotificationManager alarmNotificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, categories.class), 0);
+        PendingIntent contentIntent;
 
+        switch (settingAlarm.selectedTask) {
+            case "Name the Flag":
+                contentIntent = PendingIntent.getActivity(this, 0,
+                        new Intent(this, categories.class), 0);
+                break;
+            case "Maths Challenge":
+                contentIntent = PendingIntent.getActivity(this, 0,
+                        new Intent(this, maths.class), 0);
+                break;
+            default:
+                List<Class> taskList = new ArrayList<>();
+                taskList.add(categories.class);
+                taskList.add(maths.class);
 
-        List<Integer> soundList = new ArrayList<Integer>();
-        soundList.add(R.raw.alarm_buzzer);
-        soundList.add(R.raw.industrial_alarm);
-        soundList.add(R.raw.police_siren);
-        soundList.add(R.raw.tornado_siren);
+                int randomInt = new Random().nextInt(taskList.size());
+                Class task = taskList.get(randomInt);
 
-        int randomInt = new Random().nextInt(soundList.size());
-        int sound = soundList.get(randomInt);
+                contentIntent = PendingIntent.getActivity(this, 0,
+                        new Intent(this, task), 0);
+                break;
+        }
 
+        int sound;
+
+        switch (settingAlarm.selectedAlarm) {
+            case "Buzzer Alarm":
+                sound = R.raw.alarm_buzzer;
+                break;
+            case "Industrial Alarm":
+                sound = R.raw.industrial_alarm;
+                break;
+            case "Police Siren":
+                sound = R.raw.police_siren;
+                break;
+            case "Tornado Siren":
+                sound = R.raw.tornado_siren;
+                break;
+            default:
+                List<Integer> soundList = new ArrayList<>();
+                soundList.add(R.raw.alarm_buzzer);
+                soundList.add(R.raw.industrial_alarm);
+                soundList.add(R.raw.police_siren);
+                soundList.add(R.raw.tornado_siren);
+
+                int randomInt = new Random().nextInt(soundList.size());
+                sound = soundList.get(randomInt);
+                break;
+        }
 
         mPlayer = MediaPlayer.create(this, sound);
         mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
