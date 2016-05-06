@@ -14,14 +14,19 @@
         <activity android:name=".settingAlarm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".alarmList"></activity>
         <activity android:name=".categories"></activity>
         <activity android:name=".maths"></activity>
 
+=======
+        <activity android:name=".alarmList"/>
+        <activity android:name=".categories"/>
+        <activity android:name=".maths"/>
+>>>>>>> refs/remotes/origin/master
         <service
             android:name=".AlarmService"
             android:enabled="true" />
