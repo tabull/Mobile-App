@@ -271,8 +271,8 @@ public class maths extends AppCompatActivity {
         String txtA4 = txtout4.getText().toString();
         String txtA5 = txtout5.getText().toString();
 
-        if (txtA1 == null || txtA1.equals("")) {
-            Toast.makeText(getApplicationContext(), "Who are you trying to FOOL!!!", Toast.LENGTH_LONG).show();
+        if (txtA1.equals("")) {
+            Toast.makeText(getApplicationContext(), "Who are you trying to FOOL!!!", Toast.LENGTH_SHORT).show();
             //Log.i("Result", "null");
         } else if (txtA1.equals("5") && txtA2.equals("*") && txtA3.equals("2") && txtA4.equals("+") && txtA5.equals("7")) {
             Log.i("Result", "Successful");

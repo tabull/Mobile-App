@@ -17,9 +17,9 @@ public class alarmList extends AppCompatActivity {
         setContentView(R.layout.alarm_list);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(settingAlarm.EXTRA_MESSAGE);
-        String message2 = intent.getStringExtra(settingAlarm.selectedAlarm);
-        String message3 = intent.getStringExtra(settingAlarm.selectedTask);
+        String message = "Alarm set for: " + intent.getStringExtra(settingAlarm.time);
+        String message2 = "Chosen alarm tone: " + intent.getStringExtra(settingAlarm.alarmTone);
+        String message3 = "Chosen task: " + intent.getStringExtra(settingAlarm.task);
 
         TextView textView = (TextView) findViewById(R.id.alarmSetText);
         TextView textView2 = (TextView) findViewById(R.id.chosenAlarmText);
@@ -27,15 +27,15 @@ public class alarmList extends AppCompatActivity {
 
         assert textView != null;
         textView.setText(message);
-        textView.setTextSize(32);
+        textView.setTextSize(24);
 
         assert textView2 != null;
         textView2.setText(message2);
-        textView2.setTextSize(32);
+        textView2.setTextSize(24);
 
         assert textView3 != null;
         textView3.setText(message3);
-        textView3.setTextSize(32);
+        textView3.setTextSize(24);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
