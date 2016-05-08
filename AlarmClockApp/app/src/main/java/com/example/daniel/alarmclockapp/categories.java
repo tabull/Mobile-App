@@ -79,7 +79,6 @@ public class categories extends AppCompatActivity{
                 && textout6.getText().equals("N")
                 && textout7.getText().equals("D")
                 ) {
-            Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
 
             AlarmService.mPlayer.stop();
             Intent intent = new Intent(this, settingAlarm.class);
