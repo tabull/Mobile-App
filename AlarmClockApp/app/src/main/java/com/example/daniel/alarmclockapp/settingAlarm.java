@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -126,16 +127,19 @@ public class settingAlarm extends AppCompatActivity {
 
         formattedTime = sHour + ":" + sMinute;
 
+        Calendar now = Calendar.getInstance();
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
         calendar.set(Calendar.MINUTE, timePicker.getMinute());
+
+        if (calendar.before(now)) calendar.add(Calendar.DAY_OF_MONTH, 1);
 
         Intent myIntent = new Intent(settingAlarm.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(settingAlarm.this, 0, myIntent, 0);
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
 
-        Intent intent = new Intent(this, alarmList.class);
 
+        Intent intent = new Intent(this, alarmList.class);
 
         time = formattedTime;
         intent.putExtra(time, formattedTime);
